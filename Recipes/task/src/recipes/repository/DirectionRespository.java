@@ -1,7 +1,6 @@
 package recipes.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import recipes.entity.Direction;
+import recipes.entity.Directions;
 
-public interface DirectionRespository extends JpaRepository<Direction,Long> {
-}
+public interface DirectionRespository extends JpaRepository<Directions,Long> {}
