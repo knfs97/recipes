@@ -47,8 +47,7 @@ public class RecipeRestController {
     @GetMapping("search")
     public ResponseEntity<List<Map<String, ?>>> searchRecipeBy(@RequestParam(required = false) String category, @RequestParam(required = false) String name) {
         if (category == null && name == null || category != null && name != null) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-        if (category != null) return ResponseEntity.of(recipeService.searchByCategory(category.toLowerCase()));
-        if (name != null) return ResponseEntity.of( recipeService.searchByName(name.toLowerCase()));
-        return null;
+        if (category != null) return  ResponseEntity.ok(recipeService.searchByCategory(category.toLowerCase()));
+        return ResponseEntity.ok(recipeService.searchByName(name.toLowerCase()));
     }
 }

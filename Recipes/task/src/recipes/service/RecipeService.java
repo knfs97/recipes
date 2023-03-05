@@ -74,6 +74,16 @@ public class RecipeService {
         }
     }
 
+    public void saveUpdatedDirectionsAndSetToRecipe(Recipe recipe, List<String> itemsToFill) {
+        List<Direction> directions = new ArrayList<>();
+        itemsToFill.forEach(item -> {
+            Direction direction = new Direction(item, recipe);
+            directionRepository.save(direction);
+            directions.add(direction);
+        });
+        recipe.setDirections(directions);
+    }
+
     public void createDirectionsAndSetToRecipe(Recipe recipe, List<String> itemsToFill) {
         List<Direction> directions = new ArrayList<>();
         itemsToFill.forEach(item -> {
@@ -96,12 +106,12 @@ public class RecipeService {
 
 
     public List<Map<String, ?>> searchByCategory(String category) {
-        List<Recipe> recipesByCategory = recipeRepository.findAllByCategory(category);
+        List<Recipe> recipesByCategory = recipeRepository.findAllByCategoryIgnoreCaseOrderByLastModificationDesc(category);
         return formatListOfRecipeForOutput(recipesByCategory);
     }
 
     public List<Map<String, ?>> searchByName(String name) {
-        List<Recipe> recipesByName = recipeRepository.findAllByName(name);
+        List<Recipe> recipesByName = recipeRepository.findAllByNameIgnoreCaseOrderByLastModificationDesc(name);
         return formatListOfRecipeForOutput(recipesByName);
     }
 
@@ -114,6 +124,8 @@ public class RecipeService {
     public Map<String, ?> formatRecipeForOutput(Recipe recipe) {
         return Map.of(
                 "name", recipe.getName(),
+                "category", recipe.getCategory(),
+                "date", recipe.getLastModification(),
                 "description", recipe.getDescription(),
                 "ingredients", recipe.getIngredients()
                         .stream()

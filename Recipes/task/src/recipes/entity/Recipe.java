@@ -49,10 +49,4 @@ public class Recipe {
         return getClass().hashCode();
     }
 
-    public String getCategory() {
-        return category.toLowerCase();
-    }
-    public void setCategory(String category) {
-        this.category = category.toLowerCase();
-    }
 }
