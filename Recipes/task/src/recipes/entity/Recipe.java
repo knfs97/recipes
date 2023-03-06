@@ -28,15 +28,20 @@ public class Recipe {
     private String name;
     @NotBlank
     private String description;
-    @OneToMany(mappedBy = "recipe", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    @ToString.Exclude
-    private List<Ingredient> ingredients;
-    @OneToMany(mappedBy = "recipe", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    @ToString.Exclude
-    private List<Direction> directions;
-    private LocalDateTime lastModification;
+    @ElementCollection
+    @NotEmpty
+    private List<String> ingredients;
+    @ElementCollection
+    @NotEmpty
+    private List<String> directions;
+    private LocalDateTime date;
     @NotBlank
     private String category;
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -44,6 +49,7 @@ public class Recipe {
         Recipe recipe = (Recipe) o;
         return getId() != null && Objects.equals(getId(), recipe.getId());
     }
+
     @Override
     public int hashCode() {
         return getClass().hashCode();

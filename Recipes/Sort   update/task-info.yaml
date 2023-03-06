@@ -635,87 +635,6 @@ files:
         }
     }
   learner_created: false
-- name: src/recipes/entity/Ingredient.java
-  visible: true
-  text: |
-    package recipes.entity;
-
-    import com.fasterxml.jackson.annotation.JsonFormat;
-    import com.fasterxml.jackson.annotation.JsonIgnore;
-    import lombok.*;
-
-    import javax.persistence.*;
-    import javax.validation.constraints.NotBlank;
-
-    @Entity
-    @Getter
-    @Setter
-    @AllArgsConstructor
-    @NoArgsConstructor
-    public class Ingredient {
-
-        @Id
-        @GeneratedValue
-        @JsonIgnore
-        private Long id;
-        @NotBlank
-        private String name;
-        @ManyToOne
-        @JoinColumn(name = "recipe_id")
-        @JsonIgnore
-        private Recipe recipe;
-
-        public Ingredient(String name, Recipe recipe) {
-            this.name = name;
-            this.recipe = recipe;
-        }
-    }
-  learner_created: true
-- name: src/recipes/repository/IngredientRepository.java
-  visible: true
-  text: |
-    package recipes.repository;
-
-    import org.springframework.data.jpa.repository.JpaRepository;
-    import recipes.entity.Ingredient;
-
-    public interface IngredientRepository extends JpaRepository<Ingredient, Long> {
-    }
-  learner_created: true
-- name: src/recipes/entity/Direction.java
-  visible: true
-  text: |
-    package recipes.entity;
-
-    import com.fasterxml.jackson.annotation.JsonIgnore;
-    import lombok.*;
-
-    import javax.persistence.*;
-    import javax.validation.constraints.NotBlank;
-
-    @Entity
-    @Getter
-    @Setter
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public class Direction {
-        @Id
-        @GeneratedValue
-        @JsonIgnore
-        private Long id;
-        @NotBlank
-        private String description;
-        @ManyToOne
-        @JsonIgnore
-        @JoinColumn(name = "recipe_id")
-        private Recipe recipe;
-
-        public Direction(String description, Recipe recipe) {
-            this.description = description;
-            this.recipe = recipe;
-        }
-    }
-  learner_created: true
 - name: src/recipes/entity/Recipe.java
   visible: true
   text: |
@@ -770,16 +689,6 @@ files:
             return getClass().hashCode();
         }
     }
-  learner_created: true
-- name: src/recipes/repository/DirectionRepository.java
-  visible: true
-  text: |
-    package recipes.repository;
-
-    import org.springframework.data.jpa.repository.JpaRepository;
-    import recipes.entity.Direction;
-
-    public interface DirectionRespository extends JpaRepository<Direction,Long> {}
   learner_created: true
 - name: src/recipes/service/RecipeService.java
   visible: true
@@ -868,33 +777,6 @@ files:
         }
     }
   learner_created: true
-- name: src/recipes/entity/RecipeRequest.java
-  visible: true
-  text: |
-    package recipes.entity;
-
-    import lombok.*;
-
-
-    import javax.validation.constraints.NotBlank;
-    import javax.validation.constraints.NotEmpty;
-    import java.util.List;
-
-    @Data
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Builder
-    public class RecipeRequest {
-        @NotBlank
-        private String name;
-        @NotBlank
-        private String description;
-        @NotEmpty
-        private List<String> ingredients;
-        @NotEmpty
-        private List<String> directions;
-    }
-  learner_created: true
 - name: src/recipes/controller/RecipeRestController.java
   visible: true
   text: |
@@ -952,14 +834,8 @@ files:
     public interface RecipeRepository extends JpaRepository<Recipe, Long> {}
   learner_created: true
 feedback_link: https://hyperskill.org/learn/step/13091#comment
-status: Failed
+status: Solved
 feedback:
-  message: |-
-    Wrong answer in test #8
-
-    PUT /api/recipe/1 should respond with status code 204, responded: 404
-
-    Response body:
-    {&quot;timestamp&quot;:&quot;2023-03-05T18:03:23.230+00:00&quot;,&quot;status&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;path&quot;:&quot;/api/recipe/1&quot;}
-  time: "Sun, 05 Mar 2023 18:03:23 UTC"
-record: -1
+  message: Congratulations!
+  time: "Sun, 05 Mar 2023 18:35:13 UTC"
+record: 4

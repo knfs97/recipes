@@ -814,6 +814,230 @@ files:
         }
     }
   learner_created: false
+- name: src/recipes/controller/RecipeRestController.java
+  visible: true
+  text: |
+    package recipes.controller;
+
+    import lombok.RequiredArgsConstructor;
+    import org.springframework.http.HttpStatus;
+    import org.springframework.http.ResponseEntity;
+    import org.springframework.validation.annotation.Validated;
+    import org.springframework.web.bind.annotation.*;
+    import org.springframework.web.server.ResponseStatusException;
+    import recipes.entity.Recipe;
+    import recipes.service.RecipeService;
+
+    import javax.validation.Valid;
+    import java.util.List;
+
+    @RestController
+    @RequiredArgsConstructor
+    @RequestMapping("/api/recipe/")
+    @Validated
+    public class RecipeRestController {
+
+        private final RecipeService recipeService;
+
+        @GetMapping("{id}")
+        public ResponseEntity<?> getRecipe(@PathVariable Long id) {
+            return ResponseEntity.ok(recipeService.getRecipe(id));
+        }
+        @PostMapping("new")
+        public ResponseEntity<?> addRecipe(
+                @Valid
+                @RequestBody
+                Recipe recipeRequest
+        ) {
+            return ResponseEntity.ok(recipeService.addRecipe(recipeRequest));
+        }
+
+        @DeleteMapping("{id}")
+        @ResponseStatus(value = HttpStatus.NO_CONTENT)
+        public void removeRecipe(@PathVariable Long id) {
+            recipeService.removeRecipe(id);
+        }
+
+        @PutMapping("{id}")
+        @ResponseStatus(value = HttpStatus.NO_CONTENT)
+        public void updateRecipe(@PathVariable Long id, @Valid @RequestBody Recipe recipeRequest) {recipeService.updateRecipe(id, recipeRequest);}
+
+        @GetMapping("search")
+        public ResponseEntity<List<Recipe>> searchRecipeBy(@RequestParam(required = false) String category, @RequestParam(required = false) String name) {
+            if (category == null && name == null || category != null && name != null) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+            if (category != null) return  ResponseEntity.ok(recipeService.searchByCategory(category.toLowerCase()));
+            return ResponseEntity.ok(recipeService.searchByName(name.toLowerCase()));
+        }
+    }
+  learner_created: true
+- name: src/recipes/service/RecipeService.java
+  visible: true
+  text: |
+    package recipes.service;
+
+    import lombok.RequiredArgsConstructor;
+    import org.springframework.http.HttpStatus;
+    import org.springframework.stereotype.Service;
+    import org.springframework.web.server.ResponseStatusException;
+
+    import recipes.entity.Recipe;
+
+    import recipes.repository.RecipeRepository;
+
+    import java.time.LocalDateTime;
+    import java.util.List;
+    import java.util.Map;
+
+
+    @Service
+    @RequiredArgsConstructor
+    public class RecipeService {
+        private final RecipeRepository recipeRepository;
+
+        public Map<String, ?> addRecipe(Recipe recipe) {
+            recipe.setDate(LocalDateTime.now());
+            recipeRepository.save(recipe);
+            return Map.of("id", recipe.getId());
+        }
+
+        public Recipe getRecipe(Long id) {
+            try {
+                return recipeRepository.findById(id).orElseThrow();
+            } catch (RuntimeException ex) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            }
+        }
+
+        public void removeRecipe(Long id) {
+            try {
+                Recipe recipe = recipeRepository.findById(id).orElseThrow();
+                recipeRepository.delete(recipe);
+            } catch (RuntimeException ex) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            }
+        }
+
+        public void updateRecipe(Long id, Recipe recipeRequest) {
+            try {
+                Recipe recipe = recipeRepository.findById(id).orElseThrow();
+                recipe.setName(recipeRequest.getName());
+                recipe.setCategory(recipeRequest.getCategory());
+                recipe.setDate(LocalDateTime.now());
+                recipe.setDescription(recipeRequest.getDescription());
+                recipe.setDirections(recipeRequest.getDirections());
+                recipe.setIngredients(recipeRequest.getIngredients());
+                recipeRepository.save(recipe);
+            } catch (RuntimeException ex) {
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+            }
+        }
+        public List<Recipe> searchByCategory(String category) {
+            return recipeRepository.findAllByCategoryIgnoreCaseOrderByDateDesc(category);
+        }
+        public List<Recipe> searchByName(String name) {
+            return recipeRepository.findAllByNameIgnoreCaseContainsOrderByDateDesc(name);
+        }
+    }
+  learner_created: true
+- name: src/recipes/repository/RecipeRepository.java
+  visible: true
+  text: |
+    package recipes.repository;
+
+    import org.springframework.data.jpa.repository.JpaRepository;
+    import org.springframework.stereotype.Repository;
+    import recipes.entity.Recipe;
+
+    import java.util.List;
+
+    @Repository
+    public interface RecipeRepository extends JpaRepository<Recipe, Long> {
+        List<Recipe> findAllByCategoryIgnoreCaseOrderByDateDesc(String category);
+        List<Recipe> findAllByNameIgnoreCaseContainsOrderByDateDesc(String name);
+    }
+  learner_created: true
+- name: src/recipes/entity/Recipe.java
+  visible: true
+  text: |
+    package recipes.entity;
+
+    import com.fasterxml.jackson.annotation.JsonIgnore;
+    import lombok.*;
+    import org.hibernate.Hibernate;
+
+    import javax.persistence.*;
+    import javax.validation.constraints.NotBlank;
+    import javax.validation.constraints.NotEmpty;
+    import java.time.LocalDateTime;
+    import java.util.List;
+    import java.util.Objects;
+
+    @Getter
+    @Setter
+    @ToString
+    @Builder
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Entity
+    @Table(name = "recipes")
+    public class Recipe {
+        @Id
+        @GeneratedValue
+        @JsonIgnore
+        private Long id;
+        @NotBlank
+        private String name;
+        @NotBlank
+        private String description;
+        @ElementCollection
+        @NotEmpty
+        private List<String> ingredients;
+        @ElementCollection
+        @NotEmpty
+        private List<String> directions;
+        private LocalDateTime date;
+        @NotBlank
+        private String category;
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+            Recipe recipe = (Recipe) o;
+            return getId() != null && Objects.equals(getId(), recipe.getId());
+        }
+        @Override
+        public int hashCode() {
+            return getClass().hashCode();
+        }
+
+    }
+  learner_created: true
+- name: src/recipes/auth/controller/AuthenticationController.java
+  visible: true
+  learner_created: true
+- name: src/recipes/auth/service/AuthenticationService.java
+  visible: true
+  learner_created: true
+- name: src/recipes/auth/entity/RegisterRequest.java
+  visible: true
+  learner_created: true
+- name: src/recipes/entity/User.java
+  visible: true
+  learner_created: true
+- name: src/recipes/repository/UserRepository.java
+  visible: true
+  learner_created: true
+- name: src/recipes/config/SecurityConfiguration.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/13092#comment
-status: Unchecked
+status: Failed
+feedback:
+  message: |-
+    Wrong answer in test #5
+
+    POST /api/register should respond with status code 400, responded: 200
+
+    Response body:
+  time: "Mon, 06 Mar 2023 21:32:43 UTC"
 record: -1

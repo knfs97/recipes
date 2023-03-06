@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="RecipesApplicationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-03-05T18:03:01" hostname="KEVIN" time="21.366">
+<testsuite name="RecipesApplicationTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-03-06T21:32:33" hostname="KEVIN" time="9.509">
   <properties/>
-  <testcase name="start" classname="RecipesApplicationTest" time="21.366">
-    <failure message="java.lang.AssertionError: Wrong answer in test #8&#10;&#10;PUT /api/recipe/1 should respond with status code 204, responded: 404&#10;&#10;Response body:&#10;{&quot;timestamp&quot;:&quot;2023-03-05T18:03:23.230+00:00&quot;,&quot;status&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;path&quot;:&quot;/api/recipe/1&quot;}" type="java.lang.AssertionError">java.lang.AssertionError: Wrong answer in test #8
+  <testcase name="start" classname="RecipesApplicationTest" time="9.509">
+    <failure message="java.lang.AssertionError: Wrong answer in test #5&#10;&#10;POST /api/register should respond with status code 400, responded: 200&#10;&#10;Response body:" type="java.lang.AssertionError">java.lang.AssertionError: Wrong answer in test #5
 
-PUT /api/recipe/1 should respond with status code 204, responded: 404
+POST /api/register should respond with status code 400, responded: 200
 
 Response body:
-{&quot;timestamp&quot;:&quot;2023-03-05T18:03:23.230+00:00&quot;,&quot;status&quot;:404,&quot;error&quot;:&quot;Not Found&quot;,&quot;path&quot;:&quot;/api/recipe/1&quot;}
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.hyperskill.hstest.stage.StageTest.start(StageTest.java:203)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
@@ -67,463 +66,124 @@ Start test 1?[0m
 ?[0m?[0;34m =========|_|==============|___/=/_/_/_/
 ?[0m?[0;34m :: Spring Boot ::                (v2.5.6)
 ?[0m?[0;34m
-?[0m?[0;34m2023-03-05 13:03:03.438  INFO 9072 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.6 on Kevin with PID 9072 (started by ferna in D:\My studies\Java\Recipes\Recipes\task)
-?[0m?[0;34m2023-03-05 13:03:03.443  INFO 9072 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
-?[0m?[0;34m2023-03-05 13:03:04.971  INFO 9072 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-?[0m?[0;34m2023-03-05 13:03:05.067  INFO 9072 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 3 JPA repository interfaces.
-?[0m?[0;34m2023-03-05 13:03:06.114  INFO 9072 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
-?[0m?[0;34m2023-03-05 13:03:06.130  INFO 9072 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-?[0m?[0;34m2023-03-05 13:03:06.130  INFO 9072 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-?[0m?[0;34m2023-03-05 13:03:06.267  INFO 9072 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-?[0m?[0;34m2023-03-05 13:03:06.267  INFO 9072 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2747 ms
-?[0m?[0;34m2023-03-05 13:03:06.713  INFO 9072 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-?[0m?[0;34m2023-03-05 13:03:06.826  INFO 9072 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-?[0m?[0;34m2023-03-05 13:03:07.051  INFO 9072 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-?[0m?[0;34m2023-03-05 13:03:07.202  INFO 9072 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-?[0m?[0;34m2023-03-05 13:03:07.423  INFO 9072 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-?[0m?[0;34m2023-03-05 13:03:07.463  INFO 9072 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+?[0m?[0;34m2023-03-06 16:32:34.782  INFO 20992 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.6 on Kevin with PID 20992 (started by ferna in D:\My studies\Java\Recipes\Recipes\task)
+?[0m?[0;34m2023-03-06 16:32:34.786  INFO 20992 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
+?[0m?[0;34m2023-03-06 16:32:36.300  INFO 20992 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+?[0m?[0;34m2023-03-06 16:32:36.389  INFO 20992 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 73 ms. Found 2 JPA repository interfaces.
+?[0m?[0;34m2023-03-06 16:32:37.347  INFO 20992 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
+?[0m?[0;34m2023-03-06 16:32:37.363  INFO 20992 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+?[0m?[0;34m2023-03-06 16:32:37.363  INFO 20992 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
+?[0m?[0;34m2023-03-06 16:32:37.522  INFO 20992 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+?[0m?[0;34m2023-03-06 16:32:37.522  INFO 20992 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2675 ms
+?[0m?[0;34m2023-03-06 16:32:37.986  INFO 20992 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+?[0m?[0;34m2023-03-06 16:32:38.072  INFO 20992 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+?[0m?[0;34m2023-03-06 16:32:38.360  INFO 20992 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+?[0m?[0;34m2023-03-06 16:32:38.518  INFO 20992 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+?[0m?[0;34m2023-03-06 16:32:38.795  INFO 20992 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+?[0m?[0;34m2023-03-06 16:32:38.835  INFO 20992 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+?[0m?[0;34m2023-03-06 16:32:40.140  INFO 20992 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+?[0m?[0;34m2023-03-06 16:32:40.147  INFO 20992 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+?[0m?[0;34m2023-03-06 16:32:41.060  INFO 20992 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b6ff016, org.springframework.security.web.context.SecurityContextPersistenceFilter@3e984100, org.springframework.security.web.header.HeaderWriterFilter@5039c2cf, org.springframework.security.web.authentication.logout.LogoutFilter@755033c5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@da5b46f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6c68f29c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@49e92724, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5aefdb9e, org.springframework.security.web.session.SessionManagementFilter@69d2c460, org.springframework.security.web.access.ExceptionTranslationFilter@4425b6ed, org.springframework.security.web.access.intercept.AuthorizationFilter@689ea211]
+?[0m?[0;34m2023-03-06 16:32:41.176  WARN 20992 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+?[0m?[0;34m2023-03-06 16:32:41.908  INFO 20992 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+?[0m?[0;34m2023-03-06 16:32:41.969  INFO 20992 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
+?[0m?[0;34m2023-03-06 16:32:41.983  INFO 20992 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 7.752 seconds (JVM running for 8.806)
+?[0;34m2023-03-06 16:32:42.363  INFO 20992 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+?[0m?[0;34m2023-03-06 16:32:42.363  INFO 20992 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+?[0m?[0;34m2023-03-06 16:32:42.365  INFO 20992 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
 ?[0m?[0;34mHibernate: 
-?[0m?[0;34m    
-?[0m?[0;34m    create table direction (
-?[0m?[0;34m       id int8 not null,
-?[0m?[0;34m        description varchar(255),
-?[0m?[0;34m        recipe_id int8,
-?[0m?[0;34m        primary key (id)
-?[0m?[0;34m    )
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    
-?[0m?[0;34m    create table ingredient (
-?[0m?[0;34m       id int8 not null,
-?[0m?[0;34m        name varchar(255),
-?[0m?[0;34m        recipe_id int8,
-?[0m?[0;34m        primary key (id)
-?[0m?[0;34m    )
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    
-?[0m?[0;34m    create table recipes (
-?[0m?[0;34m       id int8 not null,
-?[0m?[0;34m        category varchar(255),
-?[0m?[0;34m        description varchar(255),
-?[0m?[0;34m        last_modification timestamp,
-?[0m?[0;34m        name varchar(255),
-?[0m?[0;34m        primary key (id)
-?[0m?[0;34m    )
-?[0m?[0;34mHibernate: create sequence hibernate_sequence start 1 increment 1
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    
-?[0m?[0;34m    alter table direction 
-?[0m?[0;34m       add constraint FKm6gquj2ng2h95yrxpuj1gjnq 
-?[0m?[0;34m       foreign key (recipe_id) 
-?[0m?[0;34m       references recipes
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    
-?[0m?[0;34m    alter table ingredient 
-?[0m?[0;34m       add constraint FK88h2tluyw2likhrjlciynjg90 
-?[0m?[0;34m       foreign key (recipe_id) 
-?[0m?[0;34m       references recipes
-?[0m?[0;34m2023-03-05 13:03:08.618  INFO 9072 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-?[0m?[0;34m2023-03-05 13:03:08.631  INFO 9072 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-?[0m?[0;34m2023-03-05 13:03:09.311  WARN 9072 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-?[0m?[0;34m2023-03-05 13:03:09.925  INFO 9072 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-?[0m?[0;34m2023-03-05 13:03:09.963  INFO 9072 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
-?[0m?[0;34m2023-03-05 13:03:09.977  INFO 9072 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 7.511 seconds (JVM running for 8.745)
-?[0;34m2023-03-05 13:03:10.418  INFO 9072 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-?[0m?[0;34m2023-03-05 13:03:10.418  INFO 9072 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-?[0m?[0;34m2023-03-05 13:03:10.421  INFO 9072 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+?[0m?[0;34m    select
+?[0m?[0;34m        user0_.id as id1_3_,
+?[0m?[0;34m        user0_.email as email2_3_,
+?[0m?[0;34m        user0_.password as password3_3_ 
+?[0m?[0;34m    from
+?[0m?[0;34m        users user0_ 
+?[0m?[0;34m    where
+?[0m?[0;34m        user0_.email=?
 ?[0m?[0;34mHibernate: 
 ?[0m?[0;34m    select
 ?[0m?[0;34m        nextval ('hibernate_sequence')
 ?[0m?[0;34mHibernate: 
 ?[0m?[0;34m    insert 
 ?[0m?[0;34m    into
-?[0m?[0;34m        recipes
-?[0m?[0;34m        (category, description, last_modification, name, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        direction
-?[0m?[0;34m        (description, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        direction
-?[0m?[0;34m        (description, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        direction
-?[0m?[0;34m        (description, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        direction
-?[0m?[0;34m        (description, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        direction
-?[0m?[0;34m        (description, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        ingredient
-?[0m?[0;34m        (name, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        ingredient
-?[0m?[0;34m        (name, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        ingredient
-?[0m?[0;34m        (name, recipe_id, id) 
+?[0m?[0;34m        users
+?[0m?[0;34m        (email, password, id) 
 ?[0m?[0;34m    values
 ?[0m?[0;34m        (?, ?, ?)
 ?[0m?[1;31m
 Start test 2?[0m
 ?[0;34mHibernate: 
 ?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        recipes
-?[0m?[0;34m        (category, description, last_modification, name, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        direction
-?[0m?[0;34m        (description, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        direction
-?[0m?[0;34m        (description, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        direction
-?[0m?[0;34m        (description, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        ingredient
-?[0m?[0;34m        (name, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        ingredient
-?[0m?[0;34m        (name, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        ingredient
-?[0m?[0;34m        (name, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
+?[0m?[0;34m        user0_.id as id1_3_,
+?[0m?[0;34m        user0_.email as email2_3_,
+?[0m?[0;34m        user0_.password as password3_3_ 
+?[0m?[0;34m    from
+?[0m?[0;34m        users user0_ 
+?[0m?[0;34m    where
+?[0m?[0;34m        user0_.email=?
 ?[1;31m
 Start test 3?[0m
 ?[0;34mHibernate: 
 ?[0m?[0;34m    select
-?[0m?[0;34m        recipe0_.id as id1_2_0_,
-?[0m?[0;34m        recipe0_.category as category2_2_0_,
-?[0m?[0;34m        recipe0_.description as descript3_2_0_,
-?[0m?[0;34m        recipe0_.last_modification as last_mod4_2_0_,
-?[0m?[0;34m        recipe0_.name as name5_2_0_ 
+?[0m?[0;34m        user0_.id as id1_3_,
+?[0m?[0;34m        user0_.email as email2_3_,
+?[0m?[0;34m        user0_.password as password3_3_ 
 ?[0m?[0;34m    from
-?[0m?[0;34m        recipes recipe0_ 
+?[0m?[0;34m        users user0_ 
 ?[0m?[0;34m    where
-?[0m?[0;34m        recipe0_.id=?
+?[0m?[0;34m        user0_.email=?
 ?[0m?[0;34mHibernate: 
 ?[0m?[0;34m    select
-?[0m?[0;34m        ingredient0_.recipe_id as recipe_i3_1_0_,
-?[0m?[0;34m        ingredient0_.id as id1_1_0_,
-?[0m?[0;34m        ingredient0_.id as id1_1_1_,
-?[0m?[0;34m        ingredient0_.name as name2_1_1_,
-?[0m?[0;34m        ingredient0_.recipe_id as recipe_i3_1_1_ 
-?[0m?[0;34m    from
-?[0m?[0;34m        ingredient ingredient0_ 
-?[0m?[0;34m    where
-?[0m?[0;34m        ingredient0_.recipe_id=?
+?[0m?[0;34m        nextval ('hibernate_sequence')
 ?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        directions0_.recipe_id as recipe_i3_0_0_,
-?[0m?[0;34m        directions0_.id as id1_0_0_,
-?[0m?[0;34m        directions0_.id as id1_0_1_,
-?[0m?[0;34m        directions0_.description as descript2_0_1_,
-?[0m?[0;34m        directions0_.recipe_id as recipe_i3_0_1_ 
-?[0m?[0;34m    from
-?[0m?[0;34m        direction directions0_ 
-?[0m?[0;34m    where
-?[0m?[0;34m        directions0_.recipe_id=?
+?[0m?[0;34m    insert 
+?[0m?[0;34m    into
+?[0m?[0;34m        users
+?[0m?[0;34m        (email, password, id) 
+?[0m?[0;34m    values
+?[0m?[0;34m        (?, ?, ?)
 ?[1;31m
 Start test 4?[0m
 ?[0;34mHibernate: 
 ?[0m?[0;34m    select
-?[0m?[0;34m        recipe0_.id as id1_2_0_,
-?[0m?[0;34m        recipe0_.category as category2_2_0_,
-?[0m?[0;34m        recipe0_.description as descript3_2_0_,
-?[0m?[0;34m        recipe0_.last_modification as last_mod4_2_0_,
-?[0m?[0;34m        recipe0_.name as name5_2_0_ 
+?[0m?[0;34m        user0_.id as id1_3_,
+?[0m?[0;34m        user0_.email as email2_3_,
+?[0m?[0;34m        user0_.password as password3_3_ 
 ?[0m?[0;34m    from
-?[0m?[0;34m        recipes recipe0_ 
+?[0m?[0;34m        users user0_ 
 ?[0m?[0;34m    where
-?[0m?[0;34m        recipe0_.id=?
+?[0m?[0;34m        user0_.email=?
 ?[0m?[0;34mHibernate: 
 ?[0m?[0;34m    select
-?[0m?[0;34m        ingredient0_.recipe_id as recipe_i3_1_0_,
-?[0m?[0;34m        ingredient0_.id as id1_1_0_,
-?[0m?[0;34m        ingredient0_.id as id1_1_1_,
-?[0m?[0;34m        ingredient0_.name as name2_1_1_,
-?[0m?[0;34m        ingredient0_.recipe_id as recipe_i3_1_1_ 
-?[0m?[0;34m    from
-?[0m?[0;34m        ingredient ingredient0_ 
-?[0m?[0;34m    where
-?[0m?[0;34m        ingredient0_.recipe_id=?
+?[0m?[0;34m        nextval ('hibernate_sequence')
 ?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        directions0_.recipe_id as recipe_i3_0_0_,
-?[0m?[0;34m        directions0_.id as id1_0_0_,
-?[0m?[0;34m        directions0_.id as id1_0_1_,
-?[0m?[0;34m        directions0_.description as descript2_0_1_,
-?[0m?[0;34m        directions0_.recipe_id as recipe_i3_0_1_ 
-?[0m?[0;34m    from
-?[0m?[0;34m        direction directions0_ 
-?[0m?[0;34m    where
-?[0m?[0;34m        directions0_.recipe_id=?
+?[0m?[0;34m    insert 
+?[0m?[0;34m    into
+?[0m?[0;34m        users
+?[0m?[0;34m        (email, password, id) 
+?[0m?[0;34m    values
+?[0m?[0;34m        (?, ?, ?)
 ?[1;31m
 Start test 5?[0m
-?[0;34m2023-03-05 13:03:11.587  INFO 9072 --- [       Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-?[0m?[0;34m2023-03-05 13:03:11.590  INFO 9072 --- [       Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-?[0m?[0;34m2023-03-05 13:03:11.598  INFO 9072 --- [       Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-?[0;34m
-?[0m?[0;34m  .   ____          _            __ _ _
-?[0m?[0;34m /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-?[0m?[0;34m( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
-?[0m?[0;34m \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-?[0m?[0;34m  '  |____| .__|_| |_|_| |_\__, | / / / /
-?[0m?[0;34m =========|_|==============|___/=/_/_/_/
-?[0m?[0;34m :: Spring Boot ::                (v2.5.6)
-?[0m?[0;34m
-?[0m?[0;34m2023-03-05 13:03:22.007  INFO 9072 --- [    Test worker] recipes.RecipesApplication               : Starting RecipesApplication using Java 17.0.6 on Kevin with PID 9072 (started by ferna in D:\My studies\Java\Recipes\Recipes\task)
-?[0m?[0;34m2023-03-05 13:03:22.007  INFO 9072 --- [    Test worker] recipes.RecipesApplication               : No active profile set, falling back to default profiles: default
-?[0m?[0;34m2023-03-05 13:03:22.269  INFO 9072 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-?[0m?[0;34m2023-03-05 13:03:22.277  INFO 9072 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 3 JPA repository interfaces.
-?[0m?[0;34m2023-03-05 13:03:22.375  INFO 9072 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8881 (http)
-?[0m?[0;34m2023-03-05 13:03:22.376  INFO 9072 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-?[0m?[0;34m2023-03-05 13:03:22.376  INFO 9072 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.54]
-?[0m?[0;34m2023-03-05 13:03:22.403  INFO 9072 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-?[0m?[0;34m2023-03-05 13:03:22.404  INFO 9072 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 394 ms
-?[0m?[0;34m2023-03-05 13:03:22.485  INFO 9072 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-?[0m?[0;34m2023-03-05 13:03:22.490  INFO 9072 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-?[0m?[0;34m2023-03-05 13:03:22.538  INFO 9072 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-?[0m?[0;34m2023-03-05 13:03:22.538  INFO 9072 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-?[0m?[0;34m2023-03-05 13:03:22.683  INFO 9072 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-?[0m?[0;34m2023-03-05 13:03:22.683  INFO 9072 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-?[0m?[0;34m2023-03-05 13:03:22.876  WARN 9072 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-?[0m?[0;34m2023-03-05 13:03:23.075  INFO 9072 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-?[0m?[0;34m2023-03-05 13:03:23.092  INFO 9072 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8881 (http) with context path ''
-?[0m?[0;34m2023-03-05 13:03:23.101  INFO 9072 --- [    Test worker] recipes.RecipesApplication               : Started RecipesApplication in 1.114 seconds (JVM running for 21.869)
-?[0m?[1;31m
-Start test 6?[0m
-?[0;34m2023-03-05 13:03:23.110  INFO 9072 --- [nio-8881-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-?[0m?[0;34m2023-03-05 13:03:23.110  INFO 9072 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-?[0m?[0;34m2023-03-05 13:03:23.111  INFO 9072 --- [nio-8881-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        recipe0_.id as id1_2_0_,
-?[0m?[0;34m        recipe0_.category as category2_2_0_,
-?[0m?[0;34m        recipe0_.description as descript3_2_0_,
-?[0m?[0;34m        recipe0_.last_modification as last_mod4_2_0_,
-?[0m?[0;34m        recipe0_.name as name5_2_0_ 
-?[0m?[0;34m    from
-?[0m?[0;34m        recipes recipe0_ 
-?[0m?[0;34m    where
-?[0m?[0;34m        recipe0_.id=?
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        ingredient0_.recipe_id as recipe_i3_1_0_,
-?[0m?[0;34m        ingredient0_.id as id1_1_0_,
-?[0m?[0;34m        ingredient0_.id as id1_1_1_,
-?[0m?[0;34m        ingredient0_.name as name2_1_1_,
-?[0m?[0;34m        ingredient0_.recipe_id as recipe_i3_1_1_ 
-?[0m?[0;34m    from
-?[0m?[0;34m        ingredient ingredient0_ 
-?[0m?[0;34m    where
-?[0m?[0;34m        ingredient0_.recipe_id=?
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        directions0_.recipe_id as recipe_i3_0_0_,
-?[0m?[0;34m        directions0_.id as id1_0_0_,
-?[0m?[0;34m        directions0_.id as id1_0_1_,
-?[0m?[0;34m        directions0_.description as descript2_0_1_,
-?[0m?[0;34m        directions0_.recipe_id as recipe_i3_0_1_ 
-?[0m?[0;34m    from
-?[0m?[0;34m        direction directions0_ 
-?[0m?[0;34m    where
-?[0m?[0;34m        directions0_.recipe_id=?
-?[1;31m
-Start test 7?[0m
 ?[0;34mHibernate: 
 ?[0m?[0;34m    select
-?[0m?[0;34m        recipe0_.id as id1_2_0_,
-?[0m?[0;34m        recipe0_.category as category2_2_0_,
-?[0m?[0;34m        recipe0_.description as descript3_2_0_,
-?[0m?[0;34m        recipe0_.last_modification as last_mod4_2_0_,
-?[0m?[0;34m        recipe0_.name as name5_2_0_ 
+?[0m?[0;34m        user0_.id as id1_3_,
+?[0m?[0;34m        user0_.email as email2_3_,
+?[0m?[0;34m        user0_.password as password3_3_ 
 ?[0m?[0;34m    from
-?[0m?[0;34m        recipes recipe0_ 
+?[0m?[0;34m        users user0_ 
 ?[0m?[0;34m    where
-?[0m?[0;34m        recipe0_.id=?
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        ingredient0_.recipe_id as recipe_i3_1_0_,
-?[0m?[0;34m        ingredient0_.id as id1_1_0_,
-?[0m?[0;34m        ingredient0_.id as id1_1_1_,
-?[0m?[0;34m        ingredient0_.name as name2_1_1_,
-?[0m?[0;34m        ingredient0_.recipe_id as recipe_i3_1_1_ 
-?[0m?[0;34m    from
-?[0m?[0;34m        ingredient ingredient0_ 
-?[0m?[0;34m    where
-?[0m?[0;34m        ingredient0_.recipe_id=?
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        directions0_.recipe_id as recipe_i3_0_0_,
-?[0m?[0;34m        directions0_.id as id1_0_0_,
-?[0m?[0;34m        directions0_.id as id1_0_1_,
-?[0m?[0;34m        directions0_.description as descript2_0_1_,
-?[0m?[0;34m        directions0_.recipe_id as recipe_i3_0_1_ 
-?[0m?[0;34m    from
-?[0m?[0;34m        direction directions0_ 
-?[0m?[0;34m    where
-?[0m?[0;34m        directions0_.recipe_id=?
-?[1;31m
-Start test 8?[0m
-?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        recipe0_.id as id1_2_0_,
-?[0m?[0;34m        recipe0_.category as category2_2_0_,
-?[0m?[0;34m        recipe0_.description as descript3_2_0_,
-?[0m?[0;34m        recipe0_.last_modification as last_mod4_2_0_,
-?[0m?[0;34m        recipe0_.name as name5_2_0_ 
-?[0m?[0;34m    from
-?[0m?[0;34m        recipes recipe0_ 
-?[0m?[0;34m    where
-?[0m?[0;34m        recipe0_.id=?
+?[0m?[0;34m        user0_.email=?
 ?[0m?[0;34mHibernate: 
 ?[0m?[0;34m    select
 ?[0m?[0;34m        nextval ('hibernate_sequence')
 ?[0m?[0;34mHibernate: 
 ?[0m?[0;34m    insert 
 ?[0m?[0;34m    into
-?[0m?[0;34m        direction
-?[0m?[0;34m        (description, recipe_id, id) 
+?[0m?[0;34m        users
+?[0m?[0;34m        (email, password, id) 
 ?[0m?[0;34m    values
 ?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    update
-?[0m?[0;34m        recipes 
-?[0m?[0;34m    set
-?[0m?[0;34m        category=?,
-?[0m?[0;34m        description=?,
-?[0m?[0;34m        last_modification=?,
-?[0m?[0;34m        name=? 
-?[0m?[0;34m    where
-?[0m?[0;34m        id=?
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        direction
-?[0m?[0;34m        (description, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    insert 
-?[0m?[0;34m    into
-?[0m?[0;34m        direction
-?[0m?[0;34m        (description, recipe_id, id) 
-?[0m?[0;34m    values
-?[0m?[0;34m        (?, ?, ?)
-?[0m?[0;34mHibernate: 
-?[0m?[0;34m    select
-?[0m?[0;34m        nextval ('hibernate_sequence')
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
